@@ -10,7 +10,7 @@ Este proyecto analiza la relación entre el gasto sanitario y la esperanza de vi
 El análisis combina Python (para limpieza y exploración de datos) y Power BI (para visualización interactiva y storytelling).
 
 🗂 Estructura del Proyecto
-
+////bash
 analisis-esperanza-vida-europa/
 │
 ├── data/
@@ -26,6 +26,7 @@ analisis-esperanza-vida-europa/
 ├── Sanchez_Eduardo_SaludUE.pbix            # Dashboard en Power BI
 ├── Sanchez_Eduardo_SaludUE.pdf             # Informe final
 └── README.md                               # Este archivo
+////bash
 
 🔍 1. Dataset y Contexto
 
