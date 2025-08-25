@@ -31,6 +31,7 @@ analisis-esperanza-vida-europa/
 🔍 1. Dataset y Contexto
 
 Los datos provienen de fuentes oficiales europeas (Eurostat, OMS) e incluyen:
+
 ✔ Esperanza de vida (años)
 
 ✔ Gasto sanitario público per cápita (€)
@@ -41,12 +42,16 @@ Los datos provienen de fuentes oficiales europeas (Eurostat, OMS) e incluyen:
 
 
 🧹 2. Proceso de Limpieza y Análisis (Python)
+
 🔑 Principales pasos en 01_data_exploration_cleaning.ipynb:
 
 ✔ Carga de datasets con Pandas
 ✔ Unificación por país y año
+
 ✔ Conversión de columnas a formato numérico (ej. 81.6 → 81.6)
+
 ✔ Eliminación de filas con países agregados (European Union, Euro Area)
+
 ✔ Creación de nuevas métricas como:
 
 Gasto per cápita = Gasto Sanitario / Población
@@ -102,22 +107,31 @@ RETURN DIVIDE([Esperanza de Vida (media)] - Prev, Prev)
 🎨 4. Diseño y Visualizaciones (Power BI)
 
 📌 Elementos principales:
+
 ✔ Mapa interactivo con banderas y colores por esperanza de vida
+
 ✔ Gráfico de líneas: evolución de la esperanza de vida por país
+
 ✔ KPI Cards: Gasto per cápita y Esperanza de vida media
+
 ✔ Segmentadores: País, Año, Región
+
 ✔ Botón de navegación a detalle
 
 🎭 5. Interactividad y Storytelling
 
 ✔ Filtros dinámicos por país y año
+
 ✔ Tooltip personalizado con gasto y esperanza de vida
+
 ✔ Narrativa: "¿Dónde se vive más y cómo influye el gasto en salud?"
 
 ✅ Conclusiones
 
-📌 El país fuera de España con mayor esperanza de vida en el último año analizado es [NOMBRE DEL PAÍS].
+📌 El país fuera de España con mayor esperanza de vida en el último año analizado es Italia.
+
 📌 Existe correlación positiva entre gasto sanitario per cápita y esperanza de vida, aunque con diferencias entre países.
+
 📌 Los países nórdicos y mediterráneos presentan mejores indicadores que la media europea.
 
 🚀 Cómo Ejecutar el Proyecto
