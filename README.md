@@ -32,8 +32,11 @@ analisis-esperanza-vida-europa/
 
 Los datos provienen de fuentes oficiales europeas (Eurostat, OMS) e incluyen:
 ✔ Esperanza de vida (años)
+
 ✔ Gasto sanitario público per cápita (€)
+
 ✔ Población total
+
 ✔ Años analizados (2014-2023)
 
 
