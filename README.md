@@ -10,7 +10,7 @@ Este proyecto analiza la relación entre el gasto sanitario y la esperanza de vi
 El análisis combina Python (para limpieza y exploración de datos) y Power BI (para visualización interactiva y storytelling).
 
 🗂 Estructura del Proyecto
-////bash
+```bash
 analisis-esperanza-vida-europa/
 │
 ├── data/
@@ -26,7 +26,7 @@ analisis-esperanza-vida-europa/
 ├── Sanchez_Eduardo_SaludUE.pbix            # Dashboard en Power BI
 ├── Sanchez_Eduardo_SaludUE.pdf             # Informe final
 └── README.md                               # Este archivo
-////bash
+````
 
 🔍 1. Dataset y Contexto
 
@@ -49,6 +49,7 @@ Los datos provienen de fuentes oficiales europeas (Eurostat, OMS) e incluyen:
 Gasto per cápita = Gasto Sanitario / Población
 
 Ejemplo de código:
+```bash
 import pandas as pd
 
 # Cargar datasets
@@ -65,36 +66,36 @@ df["gasto_per_capita"] = df["gasto"] / df["poblacion"]
 
 # Eliminar agregados
 df = df[~df["country"].isin(["European Union", "Euro Area"])]
-
+````
 📈 3. KPIs y Justificación
 
 En Power BI se crearon las siguientes métricas con DAX:
 ✔ Gasto público por habitante
-
+```DAX
 Gasto per cápita = SUM('Fact'[gasto_sanitario]) / SUM('Fact'[poblacion])
-
+````
 
 ✔ Esperanza de vida media
-
+```DAX
 Esperanza de Vida (media) = AVERAGE('Fact'[esperanza_vida])
-
+````
 
 ✔ Relación entre gasto y esperanza de vida
-
+```DAX
 Relación Gasto-Vida = DIVIDE([Gasto per cápita], [Esperanza de Vida (media)])
-
+````
 
 ✔ Top países con mayor esperanza de vida
 Usando TOPN en visualización de tabla.
 
 ✔ % de crecimiento interanual (YoY)
-
+```DAX
 Vida YoY % = 
 VAR Prev = CALCULATE([Esperanza de Vida (media)],
     FILTER(ALL('DimYear'), 'DimYear'[Year] = MAX('DimYear'[Year]) - 1)
 )
 RETURN DIVIDE([Esperanza de Vida (media)] - Prev, Prev)
-
+````
 🎨 4. Diseño y Visualizaciones (Power BI)
 
 📌 Elementos principales:
@@ -121,7 +122,6 @@ RETURN DIVIDE([Esperanza de Vida (media)] - Prev, Prev)
 Clonar repositorio
 
 git clone https://github.com/edusanchez11/analisis-esperanza-vida-europa.git
-
 
 Abrir Jupyter Notebook para explorar Python (python/ folder).
 
